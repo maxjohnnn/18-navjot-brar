@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <title>Stock Market Learning | Join Telegram</title>
+
+  <!-- Meta Pixel Code: Apna Pixel ID yahan lagayein -->
+  <!--
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', 'YOUR_PIXEL_ID');
+    fbq('track', 'PageView');
+  </script>
+  -->
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html, body {
+      width: 100%;
+      min-height: 100%;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f4f8fc;
+      color: #172033;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      min-height: 100dvh;
+      padding: 0;
+    }
+
+    .page {
+      width: 100%;
+      min-height: 100vh;
+      min-height: 100dvh;
+      background: #ffffff;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    .topbar {
+      background: #0d6efd;
+      color: #ffffff;
+      text-align: center;
+      padding: 14px 12px;
+      font-size: 14px;
+      font-weight: bold;
+      letter-spacing: 0.2px;
+    }
+
+    .content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 24px 18px 18px;
+    }
+
+    .logo-box {
+      width: 112px;
+      height: 112px;
+      border-radius: 50%;
+      overflow: hidden;
+      background: #e8f1ff;
+      border: 4px solid #d9e8ff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 16px;
+    }
+
+    .logo-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .logo-placeholder {
+      font-size: 42px;
+      font-weight: bold;
+      color: #0d6efd;
+    }
+
+    h1 {
+      font-size: clamp(24px, 7vw, 34px);
+      line-height: 1.2;
+      color: #12213a;
+      margin-bottom: 10px;
+    }
+
+    .subtitle {
+      max-width: 420px;
+      font-size: 15px;
+      line-height: 1.6;
+      color: #667085;
+      margin-bottom: 20px;
+    }
+
+    .features {
+      width: 100%;
+      max-width: 420px;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      margin-bottom: 22px;
+    }
+
+    .feature {
+      background: #f5f8fc;
+      border: 1px solid #e5ebf3;
+      border-radius: 12px;
+      padding: 13px 8px;
+      font-size: 13px;
+      line-height: 1.4;
+      color: #344054;
+    }
+
+    .feature-icon {
+      display: block;
+      font-size: 23px;
+      margin-bottom: 5px;
+    }
+
+    .join-card {
+      width: 100%;
+      max-width: 420px;
+      background: #f8fbff;
+      border: 1px solid #dceaff;
+      border-radius: 16px;
+      padding: 18px 16px;
+      margin-bottom: 18px;
+    }
+
+    .join-card h2 {
+      font-size: 18px;
+      color: #172b4d;
+      margin-bottom: 7px;
+    }
+
+    .join-card p {
+      font-size: 13px;
+      color: #667085;
+      line-height: 1.5;
+      margin-bottom: 14px;
+    }
+
+    .timer {
+      width: 66px;
+      height: 66px;
+      border-radius: 50%;
+      background: #e8f1ff;
+      border: 4px solid #0d6efd;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 14px;
+      color: #0d6efd;
+      font-size: 27px;
+      font-weight: bold;
+    }
+
+    .join-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      min-height: 52px;
+      background: #0d6efd;
+      color: #ffffff;
+      text-decoration: none;
+      border-radius: 10px;
+      font-size: 16px;
+      font-weight: bold;
+      transition: background 0.2s ease;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .join-btn:active {
+      background: #0957c7;
+      transform: scale(0.99);
+    }
+
+    .small-note {
+      font-size: 11px;
+      color: #98a2b3;
+      margin-top: 11px;
+      line-height: 1.4;
+    }
+
+    .disclaimer {
+      width: 100%;
+      max-width: 420px;
+      background: #fffaf0;
+      border: 1px solid #f4e2b8;
+      border-radius: 10px;
+      padding: 11px 12px;
+      font-size: 11px;
+      line-height: 1.5;
+      color: #795b1e;
+      margin-bottom: 16px;
+    }
+
+    .footer {
+      border-top: 1px solid #edf0f5;
+      padding: 14px 12px 16px;
+      text-align: center;
+      background: #ffffff;
+    }
+
+    .footer-text {
+      font-size: 12px;
+      color: #667085;
+      margin-bottom: 6px;
+    }
+
+    .footer a {
+      color: #0d6efd;
+      font-size: 13px;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    @media (min-width: 600px) {
+      .page {
+        max-width: 520px;
+        min-height: 100vh;
+        box-shadow: 0 0 30px rgba(0, 0, 0, 0.06);
+      }
+
+      .content {
+        padding-top: 38px;
+      }
+    }
+
+    @media (max-height: 650px) {
+      .content {
+        padding-top: 15px;
+      }
+
+      .logo-box {
+        width: 82px;
+        height: 82px;
+        margin-bottom: 10px;
+      }
+
+      h1 {
+        font-size: 25px;
+      }
+
+      .subtitle {
+        margin-bottom: 12px;
+      }
+
+      .features {
+        margin-bottom: 14px;
+      }
+
+      .join-card {
+        padding: 13px;
+        margin-bottom: 12px;
+      }
+
+      .timer {
+        width: 52px;
+        height: 52px;
+        font-size: 22px;
+        margin-bottom: 10px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="page">
+
+    <div class="topbar">
+      📈 STOCK MARKET LEARNING COMMUNITY
+    </div>
+
+    <main class="content">
+
+      <!-- APNI IMAGE YAHAN LAGAYEIN -->
+      <!-- logo.png ko apni image ke naam se replace karein -->
+      <div class="logo-box">
+        <img src="logo.png" alt="Stock Market Channel Logo"
+             onerror="this.style.display='none'; document.getElementById('logoText').style.display='block';">
+        <span class="logo-placeholder" id="logoText" style="display:none;">📊</span>
+      </div>
+
+      <h1>Learn Stock Market<br>With Our Community</h1>
+
+      <p class="subtitle">
+        Market updates, educational insights and trading-related
+        knowledge ke liye hamare Telegram channel se judhein.
+      </p>
+
+      <div class="features">
+        <div class="feature">
+          <span class="feature-icon">📊</span>
+          Market Learning
+        </div>
+
+        <div class="feature">
+          <span class="feature-icon">📚</span>
+          Educational Content
+        </div>
+
+        <div class="feature">
+          <span class="feature-icon">📈</span>
+          Market Insights
+        </div>
+
+        <div class="feature">
+          <span class="feature-icon">🔔</span>
+          Channel Updates
+        </div>
+      </div>
+
+      <div class="join-card">
+        <h2>Join Our Telegram Channel</h2>
+
+        <p>
+          Telegram par channel open karne ke liye neeche button par click karein.
+        </p>
+
+        <div class="timer" id="timer">15</div>
+
+        <a class="join-btn" id="joinBtn"
+           href="https://t.me/your_channel_link"
+           target="_blank"
+           rel="noopener noreferrer">
+          🚀 Join Telegram Channel
+        </a>
+
+        <div class="small-note" id="redirectText">
+          You will be redirected to Telegram in 15 seconds...
+        </div>
+      </div>
+
+      <div class="disclaimer">
+        ⚠️ <strong>Disclaimer:</strong> This channel is for educational
+        and informational purposes only. Stock market investments are
+        subject to market risks. No guaranteed returns are promised.
+      </div>
+
+    </main>
+
+    <footer class="footer">
+      <div class="footer-text">Ads Managed by Maxjohn</div>
+
+      <!-- APNA MAXJOHN TELEGRAM LINK YAHAN LAGAYEIN -->
+      <a href="https://t.me/maxjohn"
+         target="_blank"
+         rel="noopener noreferrer">
+        Contact Maxjohn on Telegram →
+      </a>
+    </footer>
+
+  </div>
+
+  <script>
+    // ==========================================
+    // APNA TELEGRAM CHANNEL LINK YAHAN LAGAYEIN
+    // ==========================================
+    const telegramLink = "https://t.me/your_channel_link";
+
+    // Redirect time in seconds
+    let seconds = 15;
+
+    const timer = document.getElementById("timer");
+    const joinBtn = document.getElementById("joinBtn");
+    const redirectText = document.getElementById("redirectText");
+
+    // Set Telegram link on button
+    joinBtn.href = telegramLink;
+
+    // Countdown
+    const countdown = setInterval(function () {
+      seconds--;
+
+      if (seconds >= 0) {
+        timer.textContent = seconds;
+      }
+
+      if (seconds <= 0) {
+        clearInterval(countdown);
+        redirectText.textContent = "Opening Telegram...";
+
+        // Redirect to Telegram
+        window.location.href = telegramLink;
+      }
+    }, 1000);
+  </script>
+
+</body>
+</html>
