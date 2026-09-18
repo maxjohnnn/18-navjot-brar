@@ -303,7 +303,7 @@
       <!-- APNI IMAGE YAHAN LAGAYEIN -->
       <!-- logo.png ko apni image ke naam se replace karein -->
       <div class="logo-box">
-        <img src="logo.png" alt="Stock Market Channel Logo"
+        <img src="navjot.jpg" alt="Stock Market Channel Logo"
              onerror="this.style.display='none'; document.getElementById('logoText').style.display='block';">
         <span class="logo-placeholder" id="logoText" style="display:none;">📊</span>
       </div>
@@ -347,14 +347,14 @@
         <div class="timer" id="timer">15</div>
 
         <a class="join-btn" id="joinBtn"
-           href="https://t.me/your_channel_link"
+           href="https://t.me/+W3YEhOl1dKRmYzJl"
            target="_blank"
            rel="noopener noreferrer">
           🚀 Join Telegram Channel
         </a>
 
         <div class="small-note" id="redirectText">
-          You will be redirected to Telegram in 15 seconds...
+          You will be redirected to Telegram in 50 seconds...
         </div>
       </div>
 
@@ -370,7 +370,7 @@
       <div class="footer-text">Ads Managed by Maxjohn</div>
 
       <!-- APNA MAXJOHN TELEGRAM LINK YAHAN LAGAYEIN -->
-      <a href="https://t.me/maxjohn"
+      <a href="https://t.me/+B14NSCed6bhjZTg1"
          target="_blank"
          rel="noopener noreferrer">
         Contact Maxjohn on Telegram →
@@ -383,10 +383,10 @@
     // ==========================================
     // APNA TELEGRAM CHANNEL LINK YAHAN LAGAYEIN
     // ==========================================
-    const telegramLink = "https://t.me/your_channel_link";
+    const telegramLink = "https://t.me/+W3YEhOl1dKRmYzJl";
 
     // Redirect time in seconds
-    let seconds = 15;
+    let seconds = 50;
 
     const timer = document.getElementById("timer");
     const joinBtn = document.getElementById("joinBtn");
